@@ -1,1 +1,1 @@
-# tizengame
+# tizen-game
