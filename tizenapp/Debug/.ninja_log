@@ -1,0 +1,19 @@
+# ninja log v5
+0	320	0	src/basicui.o	69c3b3b4fdc2785d
+321	577	0	basicui	39cabec0d05fa391
+0	380	0	src/basicui.o	69c3b3b4fdc2785d
+380	650	0	basicui	39cabec0d05fa391
+0	468	0	src/basicui.o	69c3b3b4fdc2785d
+468	738	0	basicui	39cabec0d05fa391
+1	177	0	src/basicui.o	69c3b3b4fdc2785d
+177	297	0	basicui	39cabec0d05fa391
+1	124	0	basicui	39cabec0d05fa391
+0	323	0	src/basicui.o	d626dc6acab8ddc6
+323	634	0	basicui	af067059a52a6eef
+1	199	0	src/basicui.o	d626dc6acab8ddc6
+199	378	0	basicui	af067059a52a6eef
+0	130	0	basicui	af067059a52a6eef
+1	514	0	src/basicui.o	d626dc6acab8ddc6
+514	777	0	basicui	af067059a52a6eef
+0	378	0	src/basicui.o	7c29b503787d4d94
+378	656	0	basicui	d1693f7eb6e92722

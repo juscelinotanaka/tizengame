@@ -1,0 +1,4 @@
+set sysroot /Users/cleumirsouza/tizen-sdk/tools/smart-build-interface/../../platforms/tizen-2.3.1/wearable/rootstraps/wearable-2.3.1-device.core
+set debug-file-directory /Users/cleumirsouza/tizen-sdk/tools/smart-build-interface/../../platforms/tizen-2.3.1/wearable/rootstraps/wearable-2.3.1-device.core/usr/lib/debug
+set solib-search-path /Users/cleumirsouza/Documents/tizen/workspace/BasicUI/Debug
+dir /Users/cleumirsouza/tizen-sdk/tools/smart-build-interface/../../platforms/tizen-2.3.1/wearable/rootstraps/wearable-2.3.1-device.core/usr/src/debug
