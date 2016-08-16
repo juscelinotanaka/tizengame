@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public class Bar : MonoBehaviour {
 
 	Vector3 position, lastPos;
 	public Ball ball;
 	public bool cheater = false;
+
+	[DllImport ("sharedlibrary")]
+	private static extern bool tizensharedlibrary();
 
 	// Use this for initialization
 	void Start () {
@@ -33,7 +37,8 @@ public class Bar : MonoBehaviour {
 				transform.position = new Vector3 (Mathf.Clamp (position.x, -4.5f, 4.5f), transform.position.y);
 			}
 			if (Input.GetButtonDown ("Cancel")) {
-				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+				Debug.Log ("###-### : Value : " + tizensharedlibrary());
 			}
 		}
 	}
