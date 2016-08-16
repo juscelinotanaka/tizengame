@@ -9,8 +9,11 @@ public class Bar : MonoBehaviour {
 	public Ball ball;
 	public bool cheater = false;
 
-	[DllImport ("sharedlibrary")]
-	private static extern bool tizensharedlibrary();
+	[DllImport ("bezellib")]
+	private static extern bool tizenbezellib();
+
+	[DllImport ("bezellib")]
+	private static extern bool logMessage();
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +41,8 @@ public class Bar : MonoBehaviour {
 			}
 			if (Input.GetButtonDown ("Cancel")) {
 				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-				Debug.Log ("###-### : Value : " + tizensharedlibrary());
+				Debug.Log ("###-### : Value : " + tizenbezellib());
+				Debug.Log ("###-### : Registering : " + logMessage());
 			}
 		}
 	}

@@ -1,0 +1,4 @@
+build main_build: phony libbezellib.so
+build all: phony main_build
+default all
+edje-cc-options = -deps
