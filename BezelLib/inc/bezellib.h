@@ -13,15 +13,12 @@
 extern "C" {
 #endif
 
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "testapp"
-
 // This method is exported from bezellib.so
 EXPORT_API bool tizenbezellib(void);
 EXPORT_API bool logMessage (char *gameObject, char *methodname, char *messageToSend);
+EXPORT_API bool registerBezelListener (char *gameObject, char *methodName);
 
+// this signature should be declared to allow sending message back to Unity.
 void UnitySendMessage(char *gameObject, char *methodname, char *messageToSend);
 
 #ifdef __cplusplus
