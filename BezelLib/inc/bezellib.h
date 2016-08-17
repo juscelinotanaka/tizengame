@@ -20,7 +20,9 @@ extern "C" {
 
 // This method is exported from bezellib.so
 EXPORT_API bool tizenbezellib(void);
-EXPORT_API bool logMessage (void);
+EXPORT_API bool logMessage (char *gameObject, char *methodname, char *messageToSend);
+
+void UnitySendMessage(char *gameObject, char *methodname, char *messageToSend);
 
 #ifdef __cplusplus
 }

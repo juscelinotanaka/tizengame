@@ -13,12 +13,16 @@ public class Bar : MonoBehaviour {
 	private static extern bool tizenbezellib();
 
 	[DllImport ("bezellib")]
-	private static extern bool logMessage();
+	private static extern bool logMessage (string gameObject, string methodname, string messageToSend);
 
 	// Use this for initialization
 	void Start () {
 		position = transform.position;
 		lastPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	}
+
+	void MyLocalLog (string text) {
+		print ("###-### : myLocal : " + text);
 	}
 	
 	// Update is called once per frame
@@ -42,8 +46,10 @@ public class Bar : MonoBehaviour {
 			if (Input.GetButtonDown ("Cancel")) {
 				//SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 				Debug.Log ("###-### : Value : " + tizenbezellib());
-				Debug.Log ("###-### : Registering : " + logMessage());
+				Debug.Log ("###-### : Registering : " + this.name + " : " + logMessage(this.name, "MyLocalLog", "This Text"));
 			}
 		}
 	}
+
+
 }

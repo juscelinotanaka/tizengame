@@ -23,9 +23,10 @@ Eina_Bool _rotary_handler_cb(void *data, Eext_Rotary_Event_Info *ev) {
    return EINA_FALSE;
 }
 
-bool logMessage (void) {
+bool logMessage (char *gameObject, char *methodname, char *messageToSend) {
 	eext_rotary_event_handler_add(_rotary_handler_cb, NULL);
-	dlog_print(DLOG_INFO, LOG_TAG, "Event Registered");
+	dlog_print(DLOG_INFO, "MyTag", "Event Registered");
+	UnitySendMessage(gameObject, methodname, messageToSend);
 
 	return true;
 }

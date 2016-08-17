@@ -27,3 +27,13 @@
 434	684	0	libbezellib.so	dc1c1859664915f6
 1	424	0	src/bezellib.o	74ede549a50986cf
 424	678	0	libbezellib.so	dc1c1859664915f6
+0	262	0	src/bezellib.o	4275dcfeac71629e
+1	237	0	src/bezellib.o	4275dcfeac71629e
+1	492	0	src/bezellib.o	4275dcfeac71629e
+493	750	0	libbezellib.so	4aec098bc16754a9
+1	453	0	src/bezellib.o	4275dcfeac71629e
+453	718	0	libbezellib.so	2199466262914053
+0	4	0	clean_sa	8bd561c426315feb
+4	9	0	clean	d59b6dac04fa9b5d
+0	317	0	src/bezellib.o	4275dcfeac71629e
+317	572	0	libbezellib.so	2199466262914053
