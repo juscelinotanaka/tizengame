@@ -22,8 +22,10 @@ public class InputManager : MonoBehaviour {
 	}
 
 	public void RegisterBezelListener (BezelEvent listener) {
+		#if UNITY_TIZEN && !UNITY_EDITOR
 		registerBezelListener (this.name, "BezelEventTrigger");
 		bezelEvent = listener;
+		#endif
 	}
 
 	public void BezelEventTrigger (string direction) {
