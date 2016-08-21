@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 
-	public float vert = 1f, hori = 1f, speed = 1.5f;
+	public float speed = 1.5f;
 	private Rigidbody2D mBody;
 	public bool started = false;
 
@@ -15,19 +15,22 @@ public class Ball : MonoBehaviour {
 	
 	void Update () {
 		if (Input.GetMouseButtonUp (0) && !started) {
+			GameManager.Instance.StartGame ();
 			started = true;
 			mBody.velocity = new Vector2 ((transform.position.x >= 0 ? 1 : -1), 1) * speed;
 		}
-
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
+		if (col.transform.tag == "DeathZone") {
+			print ("Game Over");
+			GameManager.Instance.GameOver ();
+			GetComponent<Collider2D> ().enabled = false;
+			return;
+		}
+
 		Vector2 direction;
 		Vector2 normal = col.contacts [0].normal;
-
-		if (col.contacts.Length > 1) {
-			print ("Mais : " + col.contacts.Length);
-		}
 
 		direction = Vector3.Reflect(col.relativeVelocity, normal ).normalized;
 
@@ -42,6 +45,10 @@ public class Ball : MonoBehaviour {
 			direction.x = maxAngle * percent;
 			direction.y = maxAngle * (1 - percent);
 		}
+
+		//add some noise to avoid hitting back and forth at the same direction
+		direction.x += Random.Range(0.001f, 0.005f);
+		direction.y += Random.Range(0.001f, 0.005f);
 
 		mBody.velocity = direction.normalized * speed;
 

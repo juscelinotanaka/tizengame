@@ -9,25 +9,21 @@ public class Bar : MonoBehaviour {
 	public Ball ball;
 	public bool cheater = false;
 
-//	[DllImport ("bezellib")]
-//	private static extern bool tizenbezellib();
-//
-//	[DllImport ("bezellib")]
-//	private static extern bool logMessage (string gameObject, string methodname, string messageToSend);
+	public float minMaxX = 3.48f;
+	public float bezelVariation = 0.25f;
 
 	// Use this for initialization
 	void Start () {
 		position = transform.position;
 		InputManager.Instance.RegisterBezelListener (BezelMoved);
+		Application.runInBackground = true;
 	}
 
 	void BezelMoved (BezelDirection dir) {
 		if (dir == BezelDirection.CLOCKWISE) {
-			print ("###-### : rotate wise");
-			Move (new Vector2 (0.25f, 0f));
+			Move (new Vector2 (-bezelVariation, 0f));
 		} else {
-			print ("###-### : rotate counter");
-			Move (new Vector2 (-0.25f, 0f));
+			Move (new Vector2 (bezelVariation, 0f));
 		}
 	}
 
@@ -36,13 +32,20 @@ public class Bar : MonoBehaviour {
 		if (!ball.started) {
 			ball.transform.position += new Vector3 (delta.x, 0f);
 		}
-		transform.position = new Vector3 (Mathf.Clamp (position.x, -4.5f, 4.5f), transform.position.y);
+		transform.position = new Vector3 (Mathf.Clamp (position.x, -minMaxX, minMaxX), transform.position.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (cheater) {
-			transform.position = new Vector3 (ball.transform.position.x, transform.position.y);
+			transform.position = new Vector3 (ball.transform.position.x + Random.Range(0.11f, 0.25f), transform.position.y);
+			if (Input.GetKey (KeyCode.U)) {
+				Time.timeScale = 1f;
+			} else if (Input.GetKey (KeyCode.I)) {
+				Time.timeScale = 2f;
+			} else if (Input.GetKey (KeyCode.O)) {
+				Time.timeScale = 3f;
+			}
 		} else {
 			if (Input.GetMouseButtonDown (0)) {
 				lastPos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
