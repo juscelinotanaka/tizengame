@@ -154,9 +154,9 @@
 									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/lib/glib-2.0/include&quot;"/>
 								</option>
 								<option id="sbi.gnu.c.compiler.option.frameworks_cflags.core.952751556" name="Tizen-Frameworks-Other-Cflags" superClass="sbi.gnu.c.compiler.option.frameworks_cflags.core" valueType="stringList">
-									<listOptionValue builtIn="false" value="$(TC_COMPILER_MISC)"/>
-									<listOptionValue builtIn="false" value="$(RS_COMPILER_MISC)"/>
-									<listOptionValue builtIn="false" value="--sysroot=&quot;$(SBI_SYSROOT)&quot;"/>
+									<listOptionValue builtIn="false" value="${TC_COMPILER_MISC}"/>
+									<listOptionValue builtIn="false" value="${RS_COMPILER_MISC}"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
 									<listOptionValue builtIn="false" value="-mthumb"/>
 									<listOptionValue builtIn="false" value="-fvisibility=hidden"/>
 								</option>
@@ -171,11 +171,11 @@
 							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.base.279741154" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.base"/>
 							<tool command="arm-linux-gnueabi-g++" id="org.tizen.nativecore.tool.sbi.gnu.cpp.linker.654843874" name="C++ Linker" superClass="org.tizen.nativecore.tool.sbi.gnu.cpp.linker">
 								<option id="sbi.gnu.cpp.linker.option.frameworks_lflags.core.966047038" name="Tizen-Frameworks-Other-Lflags" superClass="sbi.gnu.cpp.linker.option.frameworks_lflags.core" valueType="stringList">
-									<listOptionValue builtIn="false" value="$(TC_LINKER_MISC)"/>
-									<listOptionValue builtIn="false" value="$(RS_LINKER_MISC)"/>
+									<listOptionValue builtIn="false" value="${TC_LINKER_MISC}"/>
+									<listOptionValue builtIn="false" value="${RS_LINKER_MISC}"/>
 									<listOptionValue builtIn="false" value="-lpthread "/>
-									<listOptionValue builtIn="false" value="--sysroot=&quot;$(SBI_SYSROOT)&quot;"/>
-									<listOptionValue builtIn="false" value="-L&quot;$(SBI_SYSROOT)/usr/lib&quot;"/>
+									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-L&quot;${SBI_SYSROOT}/usr/lib&quot;"/>
 									<listOptionValue builtIn="false" value="$(RS_LIBRARIES)"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.497426732" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">

@@ -55,8 +55,6 @@ public class Bar : MonoBehaviour {
 
 			}
 			if (Input.GetButtonDown ("Cancel")) {
-//				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-//				Debug.Log ("###-### : Value : " + tizenbezellib());
 				#if !UNITY_EDITOR
 				Application.Quit ();
 				#endif
